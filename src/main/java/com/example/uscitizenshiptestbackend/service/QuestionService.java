@@ -27,7 +27,7 @@ public class QuestionService {
         return questionRepository.save(question);
     }
 
-    public List<Question> saveAll(List<Question> questions) {
+    public List<Question> saveQuestions(List<Question> questions) {
         return questionRepository.saveAll(questions);
     }
 
