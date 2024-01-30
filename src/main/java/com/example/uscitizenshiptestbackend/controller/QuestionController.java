@@ -17,20 +17,22 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public Optional<Question> findById(@PathVariable Long id){
         return questionService.findById(id);
     }
+
     @GetMapping
     public List<Question> findAll(){
         return questionService.findAll();
     }
+
     @PostMapping("/addquestion")
     public Question addQuestion(@RequestBody Question question){
         return questionService.saveQuestion(question);
     }
 
-    @PostMapping("/addQuestions")
+    @PostMapping("/addquestions")
     public List<Question> addQuestions(@RequestBody List<Question> questions){
         return questionService.saveQuestions(questions);
     }
